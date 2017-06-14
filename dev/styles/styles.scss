@@ -1,0 +1,255 @@
+body{
+	background: url(../../public/assets/jordan10.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: 'Rock Salt', cursive;
+	&:before{
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.8);
+	}
+}
+
+main{
+	max-width: 1000px;
+	margin: 3% auto;
+	border: 1px black solid;
+	background: url(../../public/assets/hardwood.jpg) repeat-y;
+	opacity: 0.95;
+	text-align: center;
+	// color: white;
+	h1{
+		font-size: 35px;
+		font-weight: 900;
+		margin: 5% 0 0 0;
+	}
+	p{
+		margin: 0;
+		padding: 0;
+		font-size: 18px;
+		font-weight: 900;
+		&:nth-child(2){
+			font-size: 20px;
+			font-weight: 900;
+			font-family: 'Belgrano', serif;
+		}
+		&:nth-child(3){
+			font-size: 25px;
+			font-family: 'Belgrano', serif;
+			margin-top: 2%;
+		}
+	}
+	.addButton{
+		margin-top: 2.5%;
+		font-size: 12px;
+		background: darkorange;
+		padding: 2% 0.5%;
+		border-radius: 50%;
+		font-family: 'Rock Salt', cursive;
+		border: 3px black solid;
+		box-shadow: 0 9px 6px -6px black;
+		cursor: pointer;
+	}
+	.loginButton{
+		padding: 1% 3%;
+		background: darkorange;
+		border: 1px black solid;
+		margin: 2% auto;
+	}
+	.logoutButton{
+		display: block;
+		padding: 1% 3%;
+		background: darkorange;
+		border: 1px black solid;
+		margin: 2% auto;
+	}
+}
+
+.formContainer{
+	visibility: hidden;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.9);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	&.show {
+		visibility: visible;
+		opacity: 1;
+	}
+	.close{
+		position: absolute;
+		left: 50%;
+		top: 5%;
+		transform: translateX(-50%);
+		padding: 0.5% 1%;
+		border: none;
+		background: none;
+		color: white;
+		font-size: 25px;
+	}
+	.addListing{
+		display: block;
+		position: absolute;
+		background: grey;
+		border: 1px white solid;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 350px;
+		padding: 5% 5% 10% 5%;
+		height: 45vh;
+		p{
+			color: white;
+			font-size: 25px;
+			margin: 0 0 5% 0;
+			text-align: center;
+		}
+		input{
+			width: 100%;
+			height: 4vh;
+			margin: 1% 0;
+		}
+		input[type="submit"]{
+			margin: 5% auto;
+			border: none;
+			background: orange;
+		}
+	}
+}
+
+.listingContainer{
+	width: 80%;
+	margin: 5% auto;
+	.smallList{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: space-between;
+		.item{
+			text-align: left;
+			width: 100%;
+			border: 1px black solid;
+			padding: 5%;
+			position: relative;
+			margin: 2% 0;
+			box-shadow: 0 12px 6px -6px black;
+			color: white;
+			font-family: 'Belgrano', serif;
+			text-transform: capitalize;
+			p{
+				font-size: 18px;
+				position: relative;
+				margin: 1% 0;
+			}
+			.statusItem{
+				position: absolute;
+				right: 1%;
+				bottom: 1%;
+				font-size: 16px;
+			}
+			.dateItem{
+				position: absolute;
+				right: 2%;
+				top: 2%;
+			}
+			&:before{
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: rgba(80, 80, 80, 0.4);
+			}
+			.attendButton{
+				position: absolute;
+				bottom: 20%;
+				right: 2%;
+				padding: 1% 3%;
+				border: 1px black solid;
+				font-family: 'Belgrano', serif;
+				text-transform: uppercase;
+				background: darkorange;
+				font-weight: 900;
+			}
+			.removeButton{
+				position: relative;
+				background: darkorange;
+				border: 1px black solid;	
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 450px) {
+    .listingContainer{
+	width: 80%;
+	margin: 5% auto;
+	.smallList{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: space-between;
+		.item{
+			text-align: left;
+			width: 100%;
+			border: 1px black solid;
+			padding: 5%;
+			position: relative;
+			margin: 2% 0;
+			box-shadow: 0 12px 6px -6px black;
+			color: white;
+			font-family: 'Belgrano', serif;
+			p{
+				font-size: 12px;
+				position: relative;
+				margin: 1% 0;
+			}
+			.statusItem{
+				position: absolute;
+				right: 1%;
+				bottom: 1%;
+				font-size: 10px;
+			}
+		}
+	}
+}
+
+.formContainer{
+	visibility: hidden;
+	opacity: 0;
+	background: rgba(0, 0, 0, 0.9);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	&.show {
+		visibility: visible;
+		opacity: 1;
+	}
+	.close{
+		position: absolute;
+		left: 50%;
+		top: 10%;
+		transform: translateX(-50%);
+		padding: 0.5% 1%;
+		border: none;
+		background: none;
+		color: white;
+		font-size: 25px;
+	}
+}
+
+}
